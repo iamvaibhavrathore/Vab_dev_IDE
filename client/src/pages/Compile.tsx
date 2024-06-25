@@ -8,6 +8,7 @@ import CodeEditor from "@/components/CodeEditor"
 import HelperHeader from "@/components/HelperHeader"
 
 function Compile() {
+    
   return (
     <ResizablePanelGroup
     direction="horizontal">

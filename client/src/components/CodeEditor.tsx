@@ -1,19 +1,20 @@
 import React from "react";
 import CodeMirror from "@uiw/react-codemirror";
-import { javascript } from "@codemirror/lang-javascript";
 import {
   githubLight,
   githubLightInit,
   githubDark,
   githubDarkInit,
 } from "@uiw/codemirror-theme-github";
-import {
-  loadLanguage,
-  langNames,
-  langs,
-} from "@uiw/codemirror-extensions-langs";
+import { loadLanguage } from "@uiw/codemirror-extensions-langs";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 function CodeEditor() {
+    //language choose 
+  const currentLanguage = useSelector(
+    (state: RootState) => state.compilerSlices.currentLanguage
+  );
   const [value, setValue] = React.useState("console.log('hello world!');");
   const onChange = React.useCallback((val: any) => {
     console.log("val:", val);
@@ -23,7 +24,7 @@ function CodeEditor() {
     <CodeMirror
       value={value}
       height="100vh"
-      extensions={[loadLanguage("html")!]}
+      extensions={[loadLanguage(currentLanguage)!]} // ! -> indicates that this is not null
       onChange={onChange}
       theme={githubDarkInit({
         settings: {
