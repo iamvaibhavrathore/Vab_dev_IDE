@@ -1,5 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from "./ui/button";
 
 function Header() {
   return (
@@ -9,7 +9,9 @@ function Header() {
       </Link>
       <ul className=" flex gap-2">
         <li>
-          <Link to="/compiler">Compiler</Link>
+          <Link to="/compiler">
+            <Button variant='secondary'>Compiler</Button>
+          </Link>
         </li>
       </ul>
     </nav>

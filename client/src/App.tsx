@@ -3,16 +3,19 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Compile from "./pages/Compile";
 import NotFound from "./pages/NotFound";
+import { ThemeProvider } from "@/components/theme-provider";
 
 function App() {
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/compiler" element={<Compile />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/compiler" element={<Compile />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </ThemeProvider>
     </>
   );
 }
