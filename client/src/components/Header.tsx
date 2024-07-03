@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 function Header() {
   return (
-    <nav className=" w-full h-[60px] bg-blue-900 text-zinc-100 p-3 flex justify-between items-center ">
+    <nav className=" w-full h-[60px] bg-zinc-900 text-zinc-100 p-3 flex justify-between items-center ">
       <Link to="/">
         <h2 className=" select-none font-bold">Vabthor RCE</h2>
       </Link>

@@ -72,7 +72,7 @@ body {
     font-size: 1rem;
     border: none;
     border-radius: 25px;
-    background-color: #007BFF;
+    background-color: rgb(24 24 27);
     color: white;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
@@ -80,7 +80,7 @@ body {
 }
 
 .cta-button:hover {
-    background-color: #0056b3;
+    background-color: #1f4037;
     transform: scale(1.1);
 }
 
